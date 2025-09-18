@@ -45,6 +45,7 @@ export default function TextForm(props) {
         setText(event.target.value);
     }
     const [text, setText] = useState('')
+    document.title = "TextUtils - Home";
     return (
         <>
             <div className="container" style={{backgroundColor: props.mode === "dark" ? "grey" : "white", color: props.mode === "dark" ? "white" : "black"}}>
@@ -63,8 +64,8 @@ export default function TextForm(props) {
             </div>
             <div className="container my-3" style={{backgroundColor: props.mode === "dark" ? "grey" : "white", color: props.mode === "dark" ? "white" : "black"}}>
                 <h1>Your text Summary</h1>
-                <p>{text.split(" ").length} words and {text.length} characters</p>
-                <p>{0.008 * text.split(" ").length} Minutes read</p>
+                <p>{text.length === 0 ? 0 : text.split(" ").length} words and {text.length} characters</p>
+                <p>{0.008 * text.length === 0 ? 0 : text.split(" ").length} Minutes read</p>
                 <h2>Preview</h2>
                 <p>{text.length > 0 ? text : "Enter Something in textbox to preview it here!"}</p>
             </div>

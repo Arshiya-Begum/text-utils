@@ -27,7 +27,7 @@ export default function About() {
             setbtnText("Enable Dark Mode")
         }
     }
-
+    document.title = "TextUtils - About"
     return (
         <div className='container' style={myStyle}> 
             <h1 className='my-3'>About Us</h1>
